@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
+.quote-box {
+    background: #fff;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    gap: 1.75em;
+    grid-template-areas:
+        'quote quote quote quote'
+        '. . author author'
+        'links . newQuote newQuote';
+    padding: 1.5em 2em;
+    border-radius: 0.25em;
+    width: 500px;
+    color: var(--rdm-clr);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.quote-box__quotation {
+    grid-area: quote;
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fa-quote-left {
+    font-size: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.quote-box__text {
+    grid-area: quote;
+    font-size: 1.75rem;
 }
 
-.App-link {
-  color: #61dafb;
+.quote-box__author {
+    grid-area: author;
+    text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.quote-box__links {
+    grid-area: links;
+    display: flex;
+}
+
+.fa-brands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background-color: var(--rdm-clr);
+    margin: 0.5em;
+    padding: 1em;
+    border-radius: 0.25em;
+    color: #fff;
+}
+
+.fa-brands:hover,
+.quote-box__new-quote:hover {
+    opacity: 0.8;
+}
+
+.quote-box__new-quote {
+    cursor: pointer;
+    grid-area: newQuote;
+    border: 0;
+    font-family: inherit;
+    padding: 1em;
+    color: #fff;
+    background-color: var(--rdm-clr);
+    border-radius: 0.25em;
+    align-self: center;
 }
